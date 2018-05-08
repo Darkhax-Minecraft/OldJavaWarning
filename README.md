@@ -1,4 +1,4 @@
-# Enchantment-Descriptions [![](http://cf.way2muchnoise.eu/293496.svg)](https://minecraft.curseforge.com/projects/oldjavawarning) [![](http://cf.way2muchnoise.eu/versions/293496.svg)](https://minecraft.curseforge.com/projects/oldjavawarning)
+# Old Java Warning [![](http://cf.way2muchnoise.eu/293496.svg)](https://minecraft.curseforge.com/projects/oldjavawarning) [![](http://cf.way2muchnoise.eu/versions/293496.svg)](https://minecraft.curseforge.com/projects/oldjavawarning)
 Warns users when they have old java versions.
 
 [![Nodecraft](https://i.imgur.com/sz9PUmK.png)](https://nodecraft.com/r/darkhax)    
