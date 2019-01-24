@@ -40,8 +40,8 @@ public class OldJavaWarning {
             return;
         }
         
-        // Warn users if they are not using 64bit JVM and have less than 4gb available.
-        if (Config.warn32 && isJvm64bit()) {
+        // Warn users if they are not using 64bit JVM.
+        if (Config.warn32 && !isJvm64bit()) {
             
             displayWarning(I18n.format("oldjava.notice.bit.body"), I18n.format("oldjava.notice.bit.title"), I18n.format("oldjava.url.bitinfo"));
         }
