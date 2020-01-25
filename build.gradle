@@ -187,4 +187,4 @@ task signJar(type: SignJar, dependsOn: jar) {
 	}
 }
 
-build.dependsOn signJar
+//build.dependsOn signJar
