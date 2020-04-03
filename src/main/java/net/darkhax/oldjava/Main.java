@@ -9,13 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Main {
-
-	public static void main(String... args) {
-		
-		displayWarning(args[0], args[1], args[2], args[3], args[4], args[5]);
-	}
-	
-    private static void displayWarning(String message, String title, String url, String readMore, String ignore, String stop) {
+    
+    public static void main (String... args) {
+        
+        displayWarning(args[0], args[1], args[2], args[3], args[4], args[5]);
+    }
+    
+    private static void displayWarning (String message, String title, String url, String readMore, String ignore, String stop) {
         
         final String[] options = { readMore, ignore, stop };
         final int response = JOptionPane.showOptionDialog(getPopupFrame(), message, title, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
@@ -47,7 +47,7 @@ public class Main {
         
         catch (IOException | URISyntaxException e) {
             
-        	e.printStackTrace();
+            e.printStackTrace();
             JOptionPane.showMessageDialog(getPopupFrame(), "Could not access update guide. Do you have Internet?", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
