@@ -40,7 +40,7 @@ public class OldJavaWarning {
         
         if (!Utils.isLocked()) {
             
-            if (config.checkJavaVersion() && !Utils.compareJava(config.getMinJavaVersion())) {
+            if (config.checkJavaVersion() && Utils.compareJava(config.getMinJavaVersion())) {
                 
                 LOG.info("User has an outdated Java. Their version is {} and pack is configured to use {}.", Utils.getJavaVersion(), config.getMinJavaVersion());
                 Utils.createWarning(OLD_JAVA_WARNING.replace("%java_version%", Utils.getJavaVersion()), OLD_JAVA_TITLE, OLD_JAVA_LINK, "Read More", "Ignore", "Stop Reminding", modFile);
