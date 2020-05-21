@@ -42,19 +42,19 @@ public class OldJavaWarning {
             
             if (config.checkJavaVersion() && !Utils.compareJava(config.getMinJavaVersion())) {
                 
-                LOG.info("User has an outdated Java. Their version is {} and pack is configured to use {}.", Utils.getJavaVersion(), config.getMinJavaVersion());
+                LOG.warn("User has an outdated Java. Their version is {} and pack is configured to use {}.", Utils.getJavaVersion(), config.getMinJavaVersion());
                 Utils.createWarning(OLD_JAVA_WARNING.replace("%java_version%", Utils.getJavaVersion()), OLD_JAVA_TITLE, OLD_JAVA_LINK, "Read More", "Ignore", "Stop Reminding", modFile);
             }
             
             if (config.check32Bit() && !Utils.isJvm64bit()) {
                 
-                LOG.info("User is using a 32x version of Java. 64x is recommended for this pack.");
+                LOG.warn("User is using a 32x version of Java. 64x is recommended for this pack.");
                 Utils.createWarning(ARCH_32_WARNING, ARCH_32_TITLE, ARCH_32_LINK, "Read More", "Ignore", "Stop Reminding", modFile);
             }
             
             if (config.checkLowMemory() && !Utils.hasRam(config.getRecommenedMemory())) {
                 
-                LOG.info("User has less than the recommended amount of ram. They have {}mb and the pack recommends {}mb.", format(Utils.getMemory()), format(config.getRecommenedMemory()));
+                LOG.warn("User has less than the recommended amount of ram. They have {}mb and the pack recommends {}mb.", format(Utils.getMemory()), format(config.getRecommenedMemory()));
                 Utils.createWarning(String.format(MEMORY_WARNING, format(Utils.getMemory()), format(config.getRecommenedMemory())), MEMORY_TITLE, MEMORY_LINK, "Read More", "Ignore", "Stop Reminding", modFile);
             }
         }
