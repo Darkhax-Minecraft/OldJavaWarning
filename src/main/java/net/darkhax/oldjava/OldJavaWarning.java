@@ -47,10 +47,15 @@ public class OldJavaWarning {
         }
         
         // Warn users about using older versions of Java.
-        if (Config.warnVersion && Config.minVersion.compareTo(System.getProperty("java.version")) > 0) {
+        String[] VersionConfig = Config.minVersion.split("_");
+        String[] VersionSystem = System.getProperty("java.version").split("_");
 
-            displayWarning(I18n.format("oldjava.notice.update.body"), I18n.format("oldjava.notice.update.title"), I18n.format("oldjava.url.updateinfo"));
-        }
+        if(VersionConfig.length>1 && VersionSystem.length>1)
+            if(VersionConfig[1].matches("[0-9]+") && VersionSystem[1].matches("[0-9]+"))
+                if (Config.warnVersion && Integer.parseInt(Config.minVersion.split("_")[1])>Integer.parseInt(System.getProperty("java.version").split("_")[1]))
+                    displayWarning(I18n.format("oldjava.notice.update.body"), I18n.format("oldjava.notice.update.title"), I18n.format("oldjava.url.updateinfo"));
+
+
     }
     
     private static void displayWarning(String message, String title, String url) {
