@@ -47,7 +47,7 @@ public class OldJavaWarning {
         }
         
         // Warn users about using older versions of Java.
-        if (Config.warnVersion && Config.minVersion.compareTo(System.getProperty("java.version")) > 0) {
+        if (Config.warnVersion && Integer.parseInt(Config.minVersion.split("_")[1])>Integer.parseInt(System.getProperty("java.version").split("_")[1])) {
 
             displayWarning(I18n.format("oldjava.notice.update.body"), I18n.format("oldjava.notice.update.title"), I18n.format("oldjava.url.updateinfo"));
         }
